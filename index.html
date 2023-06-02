@@ -1,24 +1,37 @@
-
+<!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
   </head>
   <body>
-    <a-scene mindar-image="imageTargetSrc: ./careerday.mind; filterMinCF:0.0000001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene>
       <a-assets>
-	<a-asset-item id="avatarModel" src="./Lantern.gltf"></a-asset-item>
-      </a-assets>
-
-      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
-      <a-entity mindar-image-target="targetIndex: 0">
-        <!-- <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane> -->
-        <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.1 0.1 0.1" src="#avatarModel"
-        animation="property: rotation; to: 0 180 0; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+        <a-asset-item
+          id="avatarModel"
+          src="https://cdn.glitch.me/d66e4e94-d0a6-467b-9d01-19e19e4373d1/playful-dog.glb?v=1685729169193"
         >
-      </a-entity>
+        </a-asset-item>
+      </a-assets>
+      <a-entity gltf-model="#avatarModel" position="-1 0.5 -3" rotation="0 0 0"
+                animation-mixer="clip: *"> </a-entity>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder
+        position="1 0.75 -3"
+        radius="0.5"
+        height="1.5"
+        color="#FFC65D"
+      ></a-cylinder>
+      <a-plane
+        position="0 0 -4"
+        rotation="-90 0 0"
+        width="4"
+        height="4"
+        color="#7BC8A4"
+      ></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+      
     </a-scene>
   </body>
 </html>
