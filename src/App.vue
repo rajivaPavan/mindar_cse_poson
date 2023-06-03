@@ -26,14 +26,30 @@ export default {
     return {
       showSplashScreen: true,
       isLaptop: false,
+      splashScreenTimeout: 3000,
+      windowLoaded: false, // Flag variable to track window.onload event
+      isTimeoutOver: false, // Flag variable to track if the timeout has occurred
     };
   },
   mounted() {
     this.checkDevice();
     window.addEventListener('resize', this.checkDevice);
-    // setTimeout(() => {
-    //   this.showSplashScreen = false;
-    // }, 3000); // Adjust the delay time as per your requirement
+
+    const loadingTimeout = setTimeout(() => {
+      this.isTimeoutOver = true; // Set the flag variable to true
+      if(this.windowLoaded) { // Check if the window.onload event has already occurred
+        this.hideSplashScreen();
+      }
+    }, this.splashScreenTimeout);
+
+    window.onload = () => {
+      this.windowLoaded = true; // Set the flag variable to true
+      if(this.isTimeoutOver) { // Check if the timeout has already occurred){
+        clearTimeout(loadingTimeout);
+        this.hideSplashScreen();
+      }
+    };
+
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.checkDevice);
@@ -42,6 +58,11 @@ export default {
     checkDevice() {
       const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       this.isLaptop = screenWidth >= 768; // Adjust the breakpoint according to your design
+    },
+    hideSplashScreen() {
+      if (this.windowLoaded) { // Check if the window.onload event has occurred
+        this.showSplashScreen = false;
+      }
     },
   },
 };
