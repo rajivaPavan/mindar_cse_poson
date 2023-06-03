@@ -41,10 +41,10 @@ export default {
           new AGltfModelData("deer", "#deer-glb", {
             scale: {x: 0.1, y: 0.1, z: 0.1},
             rotation: {x: 0, y: -90, z: 0},
-            position: {x: 0, y: -0.5, z: 0},
+            position: {x: 0, y: -0.5, z: 0.5},
           }),
             new AGltfModelData("mihintale", "#mihintale-glb", {
-            scale: {x: 1, y: 1, z: 1},
+            scale: {x: 0.5, y: 0.5, z: 0.5},
             position: {x: 0, y: -0.5, z: 0},
             })
         ]
