@@ -1,12 +1,10 @@
 <template>
-  <div id="app">
-    <transition name="fade">
-      <SplashScreen v-if="showSplashScreen" />
-      <div v-else>
-        <component :is="devicePage" />
-      </div>
-    </transition>
-  </div>
+  <transition name="fade">
+    <SplashScreen v-if="showSplashScreen" />
+    <div v-else>
+      <component :is="devicePage" />
+    </div>
+  </transition>
 </template>
 
 <script>

@@ -1,8 +1,10 @@
 @import 'base.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 
 body{
     margin: 0;
     overflow: hidden;
-    background-color: #000;
-    color: #fff;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
 }
