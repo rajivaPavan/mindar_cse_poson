@@ -61,7 +61,7 @@ export default {
 
     // This method will be called when the user clicks on the record button to start the recording
     // and starts the countdown animation
-    startRecording() {
+    async startRecording() {
       this.recordScreen().then((stream) => {
         let mimeType = 'video/webm';
         this.mediaRecorder = this.createRecorder(stream, mimeType);
