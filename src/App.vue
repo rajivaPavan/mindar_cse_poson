@@ -3,8 +3,7 @@
     <transition name="fade">
       <SplashScreen v-if="showSplashScreen" />
       <div v-else>
-        <LaptopPage v-if="isLaptop" />
-        <MobilePage v-else />
+        <component :is="devicePage" />
       </div>
     </transition>
   </div>
@@ -24,6 +23,7 @@ export default {
   },
   data() {
     return {
+      devicePage: null,
       showSplashScreen: true,
       isLaptop: false,
       splashScreenTimeout: 3000,
@@ -58,6 +58,7 @@ export default {
     checkDevice() {
       const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       this.isLaptop = screenWidth >= 768; // Adjust the breakpoint according to your design
+      this.devicePage = this.isLaptop ? LaptopPage : MobilePage;
     },
     hideSplashScreen() {
       if (this.windowLoaded) { // Check if the window.onload event has occurred

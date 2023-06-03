@@ -1,16 +1,18 @@
 <script>
 import RecordButton from '../components/RecordButton.vue';
+import ARScene from '../components/ARScene.vue';
 
 export default {
   name: "MobilePage.vue",
   components: {
-    RecordButton
+    RecordButton,
+    ARScene,
   }
 }
 </script>
 <template>
   <div class="mobile-page">
-    <!-- Content of your mobile page -->
+    <ARScene/>
     <RecordButton />
   </div>
 </template>
