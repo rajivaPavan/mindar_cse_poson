@@ -1,1 +1,9 @@
 /*Color palette*/
+:root{
+    --bg-gradient: linear-gradient(#25052e, #710b5c, #25052e);
+    --theme-secondary: #f3b824;
+    --theme-primary: #710b5c;
+    --theme-primary-dark: #25052e;
+
+    --text-color: var(--theme-secondary);
+}

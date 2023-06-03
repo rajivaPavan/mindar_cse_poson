@@ -1,6 +1,6 @@
 <template>
-  <div className="gradient">
-    <div id="splash-text" className="zoom-out-animation">
+  <div class="gradient">
+    <div id="splash-text" class="zoom-out-animation">
       <img alt="Anubudu Vandana" src="/splash-text.png">
     </div>
   </div>
@@ -14,7 +14,7 @@ export default {
 
 <style scoped>
 .gradient {
-  background: linear-gradient(#25052e, #710b5c, #25052e);
+  background: var(--bg-gradient);
   height: 100vh;
 }
 
