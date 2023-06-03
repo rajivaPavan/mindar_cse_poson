@@ -1,7 +1,10 @@
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AR</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
     <script src="./controller.js"></script>
 </head>
@@ -12,13 +15,13 @@
         color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false">
         <a-assets>
-            <a-asset-item response-type="arraybuffer" id="avatarModel" src="./xbot.glb">
+            <a-asset-item id="avatarModel" src="./xbot.glb">
             </a-asset-item>
         </a-assets>
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
         <a-entity mindar-image-target="targetIndex: 0">
             <a-gltf-model src="#avatarModel" id="xbot-model" rotation="0 0 0"
-            position="0 0 0" scale="0.01 0.01 0.01" >
+            position="0 0 0" scale="0.1 0.1 0.1" animation-mixer="clip:Idle">
         </a-entity>
 
     </a-scene>

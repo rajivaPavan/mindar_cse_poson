@@ -17,7 +17,6 @@ const animations = {
   };
   
   document.addEventListener("DOMContentLoaded", () => {
-    const bot = document.getElementById("xbot-model");
     window.setInterval(function(){
       updateAnimationMixer();
     }, 3000);
