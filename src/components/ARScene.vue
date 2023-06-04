@@ -8,7 +8,7 @@
       <a-asset-item v-for="asset in assets" :id="asset.id" :src="asset.src"></a-asset-item>
     </a-assets>
     <a-camera look-controls="enabled: false" position="0 0 0"></a-camera>
-    <a-entity v-for="(n,i) in mindarImage.numberOfTargets" :mindar-image-target="'targetIndex:'+i">
+    <a-entity v-for="(n,i) in getNumberOfTargets()" :mindar-image-target="'targetIndex:'+i">
       <AModel v-for="model in modelsInTargets[i]" :key="model.id" :modelData="model"/>
     </a-entity>
   </a-scene>
@@ -26,27 +26,31 @@ export default {
   data() {
     return {
       mindarImage: {
-        numberOfTargets: 2, //TODO: update this to the number of targets in your mindar-image
         targetSrc: "./targets/generated.mind",
         filterMinCF: 0.0000001,
         filterBeta: 0.0001,
       },
       // Add any data you need for your AR scene
       assets: [
-        new AAssetItem("deer-glb", "./3d-models/deer.glb"),
-        new AAssetItem("mihintale-glb", "./3d-models/mihintale.glb"),
+        new AAssetItem("deer-glb", "./3d-models/Deer.glb"),
+        new AAssetItem("mihintale-glb", "./3d-models/Mihintale.glb"),
+        new AAssetItem("king-glb", "./3d-models/King.glb"),
       ],
       modelsInTargets: [ // 0 indexed targets in mindar-image
         [
           new AGltfModelData("deer", "#deer-glb", {
-            scale: {x: 0.1, y: 0.1, z: 0.1},
-            rotation: {x: 0, y: -90, z: 0},
-            position: {x: 0, y: -0.5, z: 0.5},
+            rotationY: -180,
+            scale: 0.5,
           }),
-            new AGltfModelData("mihintale", "#mihintale-glb", {
-            scale: {x: 0.5, y: 0.5, z: 0.5},
-            position: {x: 0, y: -0.5, z: 0},
-            })
+          new AGltfModelData("mihintale", "#mihintale-glb", {
+            rotationY: -180,
+            scale: 0.5,
+          }),
+          new AGltfModelData("king", "#king-glb", {
+            rotationY: -180,
+            animationClip: "Walk",
+            scale: 0.5,
+          })
         ]
       ]
     }
@@ -55,9 +59,12 @@ export default {
     // mindar-image property
     mindArImage() {
       return "imageTargetSrc: " + this.mindarImage.targetSrc
-          + "; maxTrack: " + this.mindarImage.numberOfTargets
+          + "; maxTrack: " + this.getNumberOfTargets()
           + "; filterMinCF:" + this.mindarImage.filterMinCF
           + "; filterBeta: " + this.mindarImage.filterBeta + ";";
+    },
+    getNumberOfTargets() {
+      return this.modelsInTargets.length;
     },
   },
 }
