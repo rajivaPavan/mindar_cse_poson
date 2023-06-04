@@ -1,6 +1,6 @@
 <template>
   <div class="gradient">
-    <div id="splash-text" class="zoom-out-animation">
+    <div id="splash-text" class="zoom-in-animation">
       <img alt="Anubudu Vandana" src="/splash-text.png">
     </div>
   </div>
@@ -16,9 +16,15 @@ export default {
 .gradient {
   background: var(--bg-gradient);
   height: 100vh;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 99999 !important;
 }
 
 #splash-text {
+  /*relative*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,16 +35,16 @@ export default {
 }
 
 @keyframes zoom-in {
-  0% {
+  0%,100% {
     transform: scale(0.85);
   }
-  100% {
-    transform: scale(1);
+  50% {
+    transform: scale(0.9);
   }
 }
 
-.zoom-out-animation {
-  animation: zoom-in 5s linear forwards; /* Adjust the duration and timing function as needed */
+.zoom-in-animation {
+  animation: zoom-in 2s ease-in-out infinite;
 }
 
 @media only screen and (max-width: 768px) {
