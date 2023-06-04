@@ -28,8 +28,8 @@ export default {
     return {
       mindarImage: {
         targetSrc: "./targets/generated.mind",
-        filterMinCF: 0.0000001,
-        filterBeta: 0.0001,
+        filterMinCF: 0.00001,
+        filterBeta: 0.001,
       },
       // Add any data you need for your AR scene
       assets: [
