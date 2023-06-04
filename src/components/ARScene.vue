@@ -1,8 +1,8 @@
 <template>
-  <a-scene :mindar-image="mindArImage()"
+  <a-scene ref="a-scene" :mindar-image="mindArImage()"
            color-space="sRGB"
            device-orientation-permission-ui="enabled: false"
-           :loading-screen="loadingScreen()"
+           loading-screen="enabled:false;"
            renderer="colorManagement: true, physicallyCorrectLights"
            vr-mode-ui="enabled: false">
     <a-assets>
