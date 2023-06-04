@@ -1,19 +1,58 @@
 <template>
-  <div class="bg">
-    <div class="web-back-img"></div>
-    <div class="steps-container">
-      <img src="/qrcode_cse-poson-ar.vercel.app.png" alt="QR code to cse-poson-ar.vercel.app">
-      <div class="steps">
-        <h2>Scan the QR Code using your mobile phone to experience Poson with Augmented Reality</h2>
+  <transition name="fade">
+    <SplashScreen v-if="showSplashScreen" />
+    <div v-else class="bg">
+      <div class="web-back-img"></div>
+      <div class="steps-container">
+        <img src="/qrcode_cse-poson-ar.vercel.app.png" alt="QR code to cse-poson-ar.vercel.app">
+        <div class="steps">
+          <h2>Scan the QR Code using your mobile phone to experience Poson with Augmented Reality</h2>
+        </div>
+        <img id="cse-logo" src="/logo-2.png" alt="CSE Logo">
       </div>
-      <img id="cse-logo" src="/logo-2.png" alt="CSE Logo">
     </div>
-  </div>
+  </transition>
+
 </template>
 
 <script>
+import SplashScreen from "./SplashScreen.vue";
 export default {
   name: "LaptopPage",
+  components: {
+    SplashScreen,
+  },
+  data() {
+    return {
+      showSplashScreen: true,
+      splashScreenTimeout: 3000,
+      windowLoaded: false, // Flag variable to track window.onload event
+      isTimeoutOver: false, // Flag variable to track if the timeout has occurred
+    };
+  },
+  methods: {
+    hideSplashScreen() {
+      this.showSplashScreen = false;
+    },
+  },
+  mounted() {
+
+    const loadingTimeout = setTimeout(() => {
+      this.isTimeoutOver = true; // Set the flag variable to true
+      if(this.windowLoaded) { // Check if the window.onload event has already occurred
+        this.hideSplashScreen();
+      }
+    }, this.splashScreenTimeout);
+
+    window.onload = () => {
+      this.windowLoaded = true; // Set the flag variable to true
+      if(this.isTimeoutOver) { // Check if the timeout has already occurred){
+        clearTimeout(loadingTimeout);
+        this.hideSplashScreen();
+      }
+    };
+
+  },
 }
 </script>
 
