@@ -1,7 +1,7 @@
 <template>
   <div class="gradient">
     <div id="splash-text" class="zoom-in-animation">
-      <img alt="Anubudu Vandana" src="/splash-text.png">
+      <img v-if="isImageLoaded" alt="Anubudu Vandana" src="/splash-text.png">
     </div>
   </div>
 </template>
@@ -9,6 +9,18 @@
 <script>
 export default {
   name: "SplashScreen",
+  data() {
+    return {
+      isImageLoaded: false,
+    };
+  },
+  mounted() {
+    const image = new Image();
+    image.src = "/splash-text.png";
+    image.onload = () => {
+      this.isImageLoaded = true;
+    };
+  },
 };
 </script>
 
@@ -24,7 +36,6 @@ export default {
 }
 
 #splash-text {
-  /*relative*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +46,7 @@ export default {
 }
 
 @keyframes zoom-in {
-  0%,100% {
+  0%, 100% {
     transform: scale(0.85);
   }
   50% {
