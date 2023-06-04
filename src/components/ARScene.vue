@@ -10,7 +10,7 @@
     </a-assets>
     <a-camera look-controls="enabled: false" position="0 0 0"></a-camera>
     <a-entity v-for="(n,i) in getNumberOfTargets()" :mindar-image-target="'targetIndex:'+i">
-      <AModel v-for="model in modelsInTargets[i]" :key="model.id" :modelData="model"/>
+      <AModel v-for="model in modelsInTargets[i]" :key="model.id" :ref="model.id" :modelData="model"/>
     </a-entity>
   </a-scene>
 </template>
@@ -42,14 +42,16 @@ export default {
           new AGltfModelData("deer", "#deer-glb", {
             rotationY: -180,
             scale: 0.5,
+            positionY : -0.5
           }),
           new AGltfModelData("mihintale", "#mihintale-glb", {
             rotationY: -180,
             scale: 0.5,
+            positionY : -0.5
           }),
           new AGltfModelData("king", "#king-glb", {
             rotationY: -180,
-            animationClip: "Walk",
+            animationClip: "Breath",
             scale: 0.5,
           })
         ]
