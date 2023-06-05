@@ -4,14 +4,14 @@
 
 <script>
 import LaptopPage from './pages/LaptopPage.vue';
-import MobilePage from './pages/MobilePage.vue';
+import Router from './pages/Router.vue';
 
 export default {
   name: 'App',
   components: {
     LaptopPage,
-    MobilePage,
-  },
+    Router
+},
   data() {
     return {
       devicePage: null,
@@ -28,7 +28,7 @@ export default {
     checkDevice() {
       const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       let isMobile = screenWidth < 768; // Adjust the breakpoint according to your design
-      this.devicePage = isMobile ? MobilePage : LaptopPage;
+      this.devicePage = isMobile ? Router : LaptopPage;
     },
   },
 };

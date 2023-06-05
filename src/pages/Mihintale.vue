@@ -1,9 +1,9 @@
 <script>
 import ARScene from '../components/ARScene.vue';
-import SplashScreen from '../pages/SplashScreen.vue';
+import SplashScreen from './SplashScreen.vue';
 
 export default {
-  name: "MobilePage.vue",
+  name: "MihintalePage.vue",
   components: {
     ARScene,
     SplashScreen,
