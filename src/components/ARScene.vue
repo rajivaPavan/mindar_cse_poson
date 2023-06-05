@@ -18,6 +18,7 @@
 <script>
 import {AAssetItem, AGltfModelData} from "../assets/aframe-helper.js";
 import AModel from "./AModel.vue";
+import KingAnimationController from "../assets/animator.js";
 
 export default {
   name: "ARScene",
@@ -53,6 +54,10 @@ export default {
             rotationY: -180,
             animationClip: "Breath",
             scale: 0.5,
+            animationController: (king) => {
+              const controller = new KingAnimationController(king);
+              controller.runAnimation();
+            },
           })
         ]
       ]

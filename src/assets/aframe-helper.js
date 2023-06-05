@@ -33,13 +33,15 @@ class AGltfModelData extends AObject {
                     rotationY = 0,
                     rotationZ = 0,
                     scale = 1,
-                    animationClip = '*'
+                    animationClip = '*',
+                    animationController = null
                 }) {
         super(id, src);
         this._position = this._calculatePosition(position, positionX, positionY, positionZ);
         this._rotation = this._calculateRotation(rotation, rotationX, rotationY, rotationZ);
         this._scale = scale;
         this._animationClip = animationClip;
+        this.animationController = animationController;
     }
 
     /// return the position of the model as a string
