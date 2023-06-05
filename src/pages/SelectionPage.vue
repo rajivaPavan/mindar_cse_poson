@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
     .selection-page {
-        background-image: url('./poson-web-back-v7-scaled.jpg');
+        background: var(--bg-gradient);
         height: 95vh;
         display: flex;
         flex-direction: column;
@@ -76,7 +76,7 @@ export default {
     }
 
     #mihintale-button {
-        background-image: url('poson-web-back-v7-scaled.jpg');
+        background-image: url('/poson-web-back-v7-scaled.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -84,7 +84,7 @@ export default {
     }
 
     #lantern-button {
-        background-image: url('ar-lantern-design.png');
+        background-image: url('/ar-lantern-design.png');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
