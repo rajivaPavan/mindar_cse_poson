@@ -1,5 +1,5 @@
 <script>
-import MihintalePage from './Mihintale.vue'
+import MihintalePage from './ARScenePage.vue'
 import SelectionPage from './SelectionPage.vue'
 
 const routes = {
@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     currentView() {
-      return routes[this.currentPath.slice(1) || '/'] || NotFound
+      return routes[this.currentPath.slice(1) || '/'] || SelectionPage
     }
   },
   mounted() {
