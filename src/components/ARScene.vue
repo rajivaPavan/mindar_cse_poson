@@ -24,10 +24,6 @@ export default {
     AModel,
   },
   props: {
-    targetSrc: {
-      type: String,
-      required: true,
-    },
     assets: {
       type: Array,
       required: true,

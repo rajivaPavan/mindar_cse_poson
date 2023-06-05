@@ -17,7 +17,7 @@ export default {
     }
   },
   mounted() {
-    const ascene = this.$refs["ar-scene"].$refs["a-scene"];
+    const ascene = document.querySelector('a-scene');
     //terminal output
     console.log(ascene);
     ascene.addEventListener(

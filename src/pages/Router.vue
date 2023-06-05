@@ -1,11 +1,12 @@
 <script>
-import MihintalePage from './ARScenePage.vue'
-import SelectionPage from './SelectionPage.vue'
+import SelectionPage from './SelectionPage.vue';
+import MihintaleScene from "./MihintaleScene.vue";
+import LanternsScene from "./LanternsScene.vue";
 
 const routes = {
   '/': SelectionPage,
-  '/mihintale': MihintalePage,
-  '/lanterns': MihintalePage
+  '/mihintale': MihintaleScene,
+  '/lanterns': LanternsScene
 }
 
 export default {
