@@ -18,6 +18,7 @@
 <script>
 import {AAssetItem, AGltfModelData} from "../assets/aframe-helper.js";
 import AModel from "./AModel.vue";
+import KingAnimationController from "../assets/animator.js";
 
 export default {
   name: "ARScene",
@@ -28,8 +29,8 @@ export default {
     return {
       mindarImage: {
         targetSrc: "./targets/generated.mind",
-        filterMinCF: 0.0000001,
-        filterBeta: 0.0001,
+        filterMinCF: 0.00001,
+        filterBeta: 0.005,
       },
       // Add any data you need for your AR scene
       assets: [
@@ -41,18 +42,23 @@ export default {
         [
           new AGltfModelData("deer", "#deer-glb", {
             rotationY: -180,
-            scale: 0.5,
+            scale: 1.1,
             positionY : -0.5
           }),
           new AGltfModelData("mihintale", "#mihintale-glb", {
             rotationY: -180,
-            scale: 0.5,
+            scale: 1.1,
             positionY : -0.5
           }),
           new AGltfModelData("king", "#king-glb", {
-            rotationY: -180,
+            rotationY:-180,
+            positionY: -0.1,
             animationClip: "Breath",
-            scale: 0.5,
+            scale: 1.1,
+            animationController: (king) => {
+              const controller = new KingAnimationController(king);
+              controller.runAnimation();
+            },
           })
         ]
       ]

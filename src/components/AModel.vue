@@ -1,6 +1,6 @@
 <template>
-  <a-gltf-model :id="modelData.id" :animation-mixer="animationMixer" :position="position"
-                :rotation="rotation" :scale="scale" :src="modelData.src"></a-gltf-model>
+  <a-gltf-model :ref="modelData.id" :id="modelData.id" :animation-mixer="animationMixer" :position="modelData.position"
+                :rotation="modelData.rotation" :scale="modelData.scale" :src="modelData.src"></a-gltf-model>
 </template>
 
 <script>
@@ -13,25 +13,25 @@ export default {
     modelData: {
       type: AGltfModelData,
       required: true
-    }
+    },
   },
   data() {
     return {}
+  },
+  mounted() {
+    // run animations if animation controller is provided
+    let animationController = this.modelData.animationController;
+    if(animationController != null){
+      let model = this.$refs[this.modelData.id];
+      model.addEventListener("model-loaded", ()=> {
+        animationController(model);
+      });
+    }
   },
   methods: {
     // add methods here
   },
   computed: {
-    // add computed properties here
-    rotation() {
-      return this.modelData.rotation;
-    },
-    position() {
-      return this.modelData.position;
-    },
-    scale() {
-      return this.modelData.scale;
-    },
     animationMixer() {
       return this.modelData.animationClip;
     }
