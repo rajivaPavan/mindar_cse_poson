@@ -36,7 +36,7 @@ export default {
       assets: [
         new AAssetItem("deer-glb", "./3d-models/Deer.glb"),
         new AAssetItem("mihintale-glb", "./3d-models/Mihintale.glb"),
-        new AAssetItem("king-glb", "./3d-models/King.glb"),
+        new AAssetItem("king-glb", "./3d-models/King2.glb"),
       ],
       modelsInTargets: [ // 0 indexed targets in mindar-image
         [
@@ -51,7 +51,7 @@ export default {
             positionY : -0.5
           }),
           new AGltfModelData("king", "#king-glb", {
-            rotationY: -180,
+            position: {x:-0.5, y: -0.5 , z: 1.2},
             animationClip: "Breath",
             scale: 0.5,
             animationController: (king) => {
