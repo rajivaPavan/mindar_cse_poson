@@ -21,7 +21,7 @@ import AModel from "./AModel.vue";
 import KingAnimationController from "../assets/animator.js";
 
 export default {
-  name: "ARScene",
+  name: "MihintaleARScene",
   components: {
     AModel,
   },
@@ -88,11 +88,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.a-loader-title {
-  color: var(--text-color);
-  font-family: var(--font-primary);
-}
-
-</style>
