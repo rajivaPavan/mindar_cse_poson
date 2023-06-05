@@ -84,7 +84,7 @@ export default {
     }
 
     #lantern-button {
-        background-image: url('/ar-lantern-design.png');
+        background-image: url('./ar-lantern-design.png');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
