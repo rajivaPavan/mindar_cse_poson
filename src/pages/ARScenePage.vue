@@ -1,11 +1,9 @@
 <script>
-import ARScene from '../components/ARScene.vue';
 import SplashScreen from './SplashScreen.vue';
 
 export default {
-  name: "MihintalePage.vue",
+  name: "ARScenePage",
   components: {
-    ARScene,
     SplashScreen,
   },
   data() {
@@ -40,7 +38,8 @@ export default {
 <template>
   <SplashScreen v-if="splashScreen"/>
   <div class="mobile-page">
-    <ARScene ref="ar-scene"/>
+<!--    slot-->
+    <slot name="scene"></slot>
   </div>
 </template>
 
