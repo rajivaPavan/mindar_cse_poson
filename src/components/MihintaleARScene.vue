@@ -75,16 +75,6 @@ export default {
     getNumberOfTargets() {
       return this.modelsInTargets.length;
     },
-    // loading-screen property
-    loadingScreen(){
-      // dotsColor: var(--theme-secondary);
-      // backgroundColor: var(--bg-gradient);
-      // get dots color from base.css variable
-      let dotsColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-secondary');
-      // get background color from base.css variable
-      let backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-primary');
-      return "backgroundColor: " + backgroundColor + "; dotsColor: " + dotsColor + ";";
-    }
   },
 }
 </script>
