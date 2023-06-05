@@ -36,15 +36,10 @@ export default {
       type: Array,
       required: true,
     },
-  },
-  data() {
-    return {
-      mindarImage: {
-        targetSrc: this.targetSrc,
-        filterMinCF: 0.00001,
-        filterBeta: 0.005,
-      },
-    }
+    mindarImage : {
+      type: Object,
+      required: true,
+    },
   },
   methods: {
     // mindar-image property
