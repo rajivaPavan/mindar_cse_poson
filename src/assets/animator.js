@@ -22,10 +22,10 @@ export default class KingAnimationController {
 
     async runAnimation() {
         // run animations in the order idle, walk, turn, walk, idle, shoot, idle, worship and repeat
-        await this.idle(10000);
+        await this.idle(15000);
         while(true){
             await this.worship();
-            await this.idle(5000);
+            await this.idle(3000);
         }
     }
 
