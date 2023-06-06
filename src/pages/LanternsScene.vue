@@ -22,7 +22,7 @@ export default {
     return {
       mindarImage:{
         targetSrc: "./targets/lanterns_target.mind",
-        filterMinCF: 0.00001,
+        filterMinCF: 0.0001,
         filterBeta: 0.0001
       },
       assets:[
