@@ -1,5 +1,5 @@
 <template>
-  <div class="logo">
+  <div @click="goToHome()" class="logo">
     <img src="/logo-mobile.png" alt="logo">
   </div>
   <a-scene ref="a-scene" :mindar-image="mindArImage()"
@@ -49,6 +49,9 @@ export default {
     },
   },
   methods: {
+    goToHome(){
+      window.location = "/";
+    },
     // mindar-image property
     mindArImage() {
       return "imageTargetSrc: " + this.mindarImage.targetSrc
