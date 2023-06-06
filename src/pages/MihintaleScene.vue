@@ -24,7 +24,7 @@ export default {
       mindarImage: {
         targetSrc: "./targets/mihintale_target.mind",
         filterMinCF: 0.00001,
-        filterBeta: 0.005,
+        filterBeta: 0.0001,
       },
       // Add any data you need for your AR scene
       assets: [
