@@ -1,5 +1,6 @@
 <template>
-<ARScenePage>
+  <GoToLink text="AR Mihintale" link="#/mihintale" />
+  <ARScenePage>
   <template #scene>
     <ARScene ref="ar-scene" :mindarImage="mindarImage" :modelsInTargets="modelsInTargets" :assets="assets"/>
   </template>
@@ -10,12 +11,16 @@
 import ARScenePage from './ARScenePage.vue'
 import ARScene from "../components/ARScene.vue";
 import {AAssetItem, AGltfModelData} from "../assets/aframe-helper.js";
+import MihintaleLink from "../components/MihintaleLink.vue";
+import GoToLink from "./GoToLink.vue";
 
 export default {
   name: "LanternsScene",
   components: {
+    MihintaleLink,
     ARScenePage,
-    ARScene
+    ARScene,
+    GoToLink
   },
   data(){
     const commonScale = 1.5;
@@ -58,3 +63,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+/*pass this to inner component*/
+:deep(#mihintale-button-text) {
+  margin-top: 0 !important;
+}
+:deep(.selection-button){
+
+}
+</style>
