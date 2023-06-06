@@ -24,6 +24,11 @@ export default {
     window.addEventListener('hashchange', () => {
 		  this.currentPath = window.location.hash
       this.sceneSelected = true
+      // remove all html elements with class name = "mindar-ui-overlay" if they exist
+      let elements = document.getElementsByClassName("mindar-ui-overlay");
+      while(elements.length > 0){
+          elements[0].parentNode.removeChild(elements[0]);
+      }
 		})
   }
 }
