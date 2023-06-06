@@ -1,4 +1,5 @@
 <template>
+  <Logo/>
   <GoToLink text="AR Lanterns" link="#/lanterns" />
   <ARScenePage>
     <template #scene>
@@ -13,6 +14,7 @@ import {AAssetItem, AGltfModelData} from "../assets/aframe-helper.js";
 import KingAnimationController from "../assets/animator.js";
 import ARScene from "../components/ARScene.vue";
 import GoToLink from "./GoToLink.vue";
+import Logo from "../components/Logo.vue"
 
 export default {
   name: "MihintaleScene",
@@ -20,6 +22,7 @@ export default {
     GoToLink,
     ARScenePage,
     ARScene,
+    Logo
   },
   data() {
     let commonScale = 0.6;

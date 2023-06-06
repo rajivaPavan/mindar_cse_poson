@@ -1,7 +1,4 @@
 <template>
-  <div @click="goToHome()" class="logo">
-    <img src="/logo-mobile.png" alt="logo">
-  </div>
   <a-scene ref="a-scene" :mindar-image="mindArImage()"
            color-space="sRGB"
            device-orientation-permission-ui="enabled: false"
@@ -17,21 +14,14 @@
     </a-entity>
   </a-scene>
 </template>
-<style scoped>
-  .logo img{
-    height: 9.5vh;
-    position: absolute;
-    z-index: 999;
-    top:0.5vh;
-    left:0.5vw;
-  }
-</style>
 <script>
 import AModel from "./AModel.vue";
+import Logo from "./Logo.vue";
 
 export default {
   name: "ARScene",
   components: {
+    Logo,
     AModel,
   },
   props: {
@@ -49,9 +39,6 @@ export default {
     },
   },
   methods: {
-    goToHome(){
-      window.location = "/";
-    },
     // mindar-image property
     mindArImage() {
       return "imageTargetSrc: " + this.mindarImage.targetSrc
