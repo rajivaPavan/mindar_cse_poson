@@ -24,7 +24,7 @@ export default {
       mindarImage:{
         targetSrc: "./targets/lanterns_target.mind",
         filterMinCF: 0.00001,
-        filterBeta: 0.0001
+        filterBeta: 0.01
       },
       assets:[
         new AAssetItem("lantern-1-glb", "./3d-models/ImageTarget.glb"),
@@ -34,7 +34,7 @@ export default {
       modelsInTargets:[
         [
           new AGltfModelData("lantern-1", "#lantern-1-glb",{
-            positionX:-1.5,
+            positionX:-1.75,
             scale: commonScale,
             positionY:commonPositionY,
           }),
@@ -47,7 +47,7 @@ export default {
         ],
         [
           new AGltfModelData("lantern-3", "#lantern-3-glb",{
-            positionX:2.5,
+            positionX:2.75,
             positionY:commonPositionY,
             scale: commonScale
           }),
