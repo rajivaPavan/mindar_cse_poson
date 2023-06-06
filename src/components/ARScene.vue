@@ -16,53 +16,26 @@
 </template>
 
 <script>
-import {AAssetItem, AGltfModelData} from "../assets/aframe-helper.js";
 import AModel from "./AModel.vue";
-import KingAnimationController from "../assets/animator.js";
 
 export default {
   name: "ARScene",
   components: {
     AModel,
   },
-  data() {
-    return {
-      mindarImage: {
-        targetSrc: "./targets/generated.mind",
-        filterMinCF: 0.00001,
-        filterBeta: 0.005,
-      },
-      // Add any data you need for your AR scene
-      assets: [
-        new AAssetItem("deer-glb", "./3d-models/Deer.glb"),
-        new AAssetItem("mihintale-glb", "./3d-models/Mihintale.glb"),
-        new AAssetItem("king-glb", "./3d-models/King.glb"),
-      ],
-      modelsInTargets: [ // 0 indexed targets in mindar-image
-        [
-          new AGltfModelData("deer", "#deer-glb", {
-            rotationY: -180,
-            scale: 1.1,
-            positionY : -0.5
-          }),
-          new AGltfModelData("mihintale", "#mihintale-glb", {
-            rotationY: -180,
-            scale: 1.1,
-            positionY : -0.5
-          }),
-          new AGltfModelData("king", "#king-glb", {
-            rotationY:-180,
-            positionY: -0.1,
-            animationClip: "Breath",
-            scale: 1.1,
-            animationController: (king) => {
-              const controller = new KingAnimationController(king);
-              controller.runAnimation();
-            },
-          })
-        ]
-      ]
-    }
+  props: {
+    assets: {
+      type: Array,
+      required: true,
+    },
+    modelsInTargets: {
+      type: Array,
+      required: true,
+    },
+    mindarImage : {
+      type: Object,
+      required: true,
+    },
   },
   methods: {
     // mindar-image property
@@ -75,24 +48,6 @@ export default {
     getNumberOfTargets() {
       return this.modelsInTargets.length;
     },
-    // loading-screen property
-    loadingScreen(){
-      // dotsColor: var(--theme-secondary);
-      // backgroundColor: var(--bg-gradient);
-      // get dots color from base.css variable
-      let dotsColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-secondary');
-      // get background color from base.css variable
-      let backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-primary');
-      return "backgroundColor: " + backgroundColor + "; dotsColor: " + dotsColor + ";";
-    }
   },
 }
 </script>
-
-<style scoped>
-.a-loader-title {
-  color: var(--text-color);
-  font-family: var(--font-primary);
-}
-
-</style>

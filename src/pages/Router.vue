@@ -1,11 +1,12 @@
 <script>
-import MihintalePage from './Mihintale.vue'
-import SelectionPage from './SelectionPage.vue'
+import SelectionPage from './SelectionPage.vue';
+import MihintaleScene from "./MihintaleScene.vue";
+import LanternsScene from "./LanternsScene.vue";
 
 const routes = {
   '/': SelectionPage,
-  '/mihintale': MihintalePage,
-  '/lanterns': MihintalePage
+  '/mihintale': MihintaleScene,
+  '/lanterns': LanternsScene
 }
 
 export default {
@@ -16,7 +17,7 @@ export default {
   },
   computed: {
     currentView() {
-      return routes[this.currentPath.slice(1) || '/'] || NotFound
+      return routes[this.currentPath.slice(1) || '/'] || SelectionPage
     }
   },
   mounted() {
