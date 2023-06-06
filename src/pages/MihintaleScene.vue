@@ -19,11 +19,12 @@ export default {
     ARScene
   },
   data() {
+    let commonScale = 0.6;
     return {
       mindarImage: {
         targetSrc: "./targets/mihintale_target.mind",
         filterMinCF: 0.00001,
-        filterBeta: 0.005,
+        filterBeta: 0.0001,
       },
       // Add any data you need for your AR scene
       assets: [
@@ -35,19 +36,19 @@ export default {
         [
           new AGltfModelData("deer", "#deer-glb", {
             rotationY: -180,
-            scale: 1.1,
+            scale: commonScale,
             positionY : -0.5
           }),
           new AGltfModelData("mihintale", "#mihintale-glb", {
             rotationY: -180,
-            scale: 1.1,
+            scale: commonScale,
             positionY : -0.5
           }),
           new AGltfModelData("king", "#king-glb", {
             rotationY:-180,
             positionY: -0.1,
             animationClip: "Breath",
-            scale: 1.1,
+            scale: commonScale,
             animationController: (king) => {
               const controller = new KingAnimationController(king);
               controller.runAnimation();

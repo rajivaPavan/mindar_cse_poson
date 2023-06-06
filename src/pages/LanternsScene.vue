@@ -18,11 +18,13 @@ export default {
     ARScene
   },
   data(){
+    const commonScale = 1.5;
+    const commonPositionY = -0.5;
     return {
       mindarImage:{
         targetSrc: "./targets/lanterns_target.mind",
         filterMinCF: 0.00001,
-        filterBeta: 0.0001
+        filterBeta: 0.001
       },
       assets:[
         new AAssetItem("lantern-1-glb", "./3d-models/ImageTarget.glb"),
@@ -32,17 +34,22 @@ export default {
       modelsInTargets:[
         [
           new AGltfModelData("lantern-1", "#lantern-1-glb",{
-            positionX:-1
+            positionX:-1.75,
+            scale: commonScale,
+            positionY:commonPositionY,
           }),
         ],
         [
           new AGltfModelData("lantern-2", "#lantern-2-glb",{
-
+            scale: 1.2,
+            positionY:commonPositionY,
           }),
         ],
         [
           new AGltfModelData("lantern-3", "#lantern-3-glb",{
-            positionX:1
+            positionX:2.75,
+            positionY:commonPositionY,
+            scale: commonScale
           }),
         ]
       ],
