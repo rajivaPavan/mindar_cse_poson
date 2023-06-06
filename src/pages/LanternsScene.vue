@@ -23,7 +23,7 @@ export default {
     return {
       mindarImage:{
         targetSrc: "./targets/lanterns_target.mind",
-        filterMinCF: 0.0001,
+        filterMinCF: 0.00001,
         filterBeta: 0.0001
       },
       assets:[
@@ -47,7 +47,7 @@ export default {
         ],
         [
           new AGltfModelData("lantern-3", "#lantern-3-glb",{
-            positionX:2,
+            positionX:2.5,
             positionY:commonPositionY,
             scale: commonScale
           }),
