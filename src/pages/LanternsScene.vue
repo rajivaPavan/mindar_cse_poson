@@ -18,6 +18,7 @@ export default {
     ARScene
   },
   data(){
+    let commonScale = 1.1;
     return {
       mindarImage:{
         targetSrc: "./targets/lanterns_target.mind",
@@ -32,17 +33,19 @@ export default {
       modelsInTargets:[
         [
           new AGltfModelData("lantern-1", "#lantern-1-glb",{
-            positionX:-1
+            positionX:-1,
+            scale: commonScale
           }),
         ],
         [
           new AGltfModelData("lantern-2", "#lantern-2-glb",{
-
+            scale: commonScale
           }),
         ],
         [
           new AGltfModelData("lantern-3", "#lantern-3-glb",{
-            positionX:1
+            positionX:1.1,
+            scale: commonScale
           }),
         ]
       ],
