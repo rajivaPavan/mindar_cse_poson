@@ -17,7 +17,7 @@ export default {
 .logo img {
   height: 9.5vh;
   position: absolute;
-  z-index: 999999 !important;
+  z-index: 999 !important;
   top: 0.5vh;
   left: 0.5vw;
 }
