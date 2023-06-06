@@ -14,13 +14,14 @@
     </a-entity>
   </a-scene>
 </template>
-
 <script>
 import AModel from "./AModel.vue";
+import Logo from "./Logo.vue";
 
 export default {
   name: "ARScene",
   components: {
+    Logo,
     AModel,
   },
   props: {
