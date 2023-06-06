@@ -19,7 +19,7 @@ export default {
     ARScene
   },
   data() {
-    let commonScale = 0.5;
+    let commonScale = 0.6;
     return {
       mindarImage: {
         targetSrc: "./targets/mihintale_target.mind",

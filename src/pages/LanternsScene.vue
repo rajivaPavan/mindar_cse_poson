@@ -18,7 +18,7 @@ export default {
     ARScene
   },
   data(){
-    let commonScale = 1.1;
+    let commonScale = 1.2;
     return {
       mindarImage:{
         targetSrc: "./targets/lanterns_target.mind",
@@ -44,7 +44,7 @@ export default {
         ],
         [
           new AGltfModelData("lantern-3", "#lantern-3-glb",{
-            positionX:1.1,
+            positionX:1.2,
             scale: commonScale
           }),
         ]
