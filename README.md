@@ -1,7 +1,26 @@
-# Vue 3 + Vite
+# CSE Poson Event WebAR Project
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Project Overview
 
-## Recommended IDE Setup
+This application was built to introduce Augmented Reality on the Web using the image tracking of MindAR.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Technologies Used
+- [Vue.js](https://vuejs.org/)
+- [MindAR](https://mindar.co/)
+- [A-Frame](https://aframe.io/)
+
+## Installation Instructions
+1. Clone the repo
+2. Install dependencies
+```ps
+npm install
+```
+3. Run the server
+```ps
+npm start
+```
+4. Open the browser and navigate to `localhost:3000`
+5. Enjoy!
+6. To stop the server, press `Ctrl+C` in the terminal
+
+
