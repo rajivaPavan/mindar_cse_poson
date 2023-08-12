@@ -2,7 +2,12 @@
 
 ## Project Overview
 
-[Provide a concise introduction to the project, explaining its purpose and goals]
+This application was built to introduce Augmented Reality on the Web using the image tracking of MindAR.
+
+## Technologies Used
+- [Vue.js](https://vuejs.org/)
+- [MindAR](https://mindar.co/)
+- [A-Frame](https://aframe.io/)
 
 ## Installation Instructions
 1. Clone the repo
@@ -18,25 +23,4 @@ npm start
 5. Enjoy!
 6. To stop the server, press `Ctrl+C` in the terminal
 
-## Usage and Features
 
-
-[Explain how users can interact with the project and showcase its features]
-
-## Technologies Used
-- [Vue.js](https://vuejs.org/)
-- [MindAR](https://mindar.co/)
-- [A-Frame](https://aframe.io/)
-
-## Project Structure
-- `public/` - Static assets
-- `src/` - Source files
-  - `assets/` - Static assets
-  - `components/` - Vue components
-  - `views/` - Vue views
-  - `App.vue` - Root Vue component
-  - `main.js` - Vue entry point
-
-## Acknowledgements
-
-## Additional Documentation
